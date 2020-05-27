@@ -25,7 +25,7 @@ SECRET_KEY = 'llu5cgn4-ykjh2$a=uq^+((#$ma$c(fj@l6q&xr5mn(q+ef9ds'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'measure',
 ]
 
 MIDDLEWARE = [
@@ -74,11 +76,17 @@ WSGI_APPLICATION = 'proyectointegrador1.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
+  
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'pi1-eafit-db-jssaninv1',                     
+        'USER': 'jssaninv1@pi1-eafit-db-jssaninv1',                     
+        'PASSWORD': 'zeus123*',                  
+        'HOST': 'pi1-eafit-db-jssaninv1.mysql.database.azure.com',                     
+        'PORT': '3306',
     }
 }
+
 
 
 # Password validation
